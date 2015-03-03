@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Graphics</name>
+    </assembly>
+    <members>
+        <member name="T:Graphics.Int32Point">
+            <summary>
+                Represents a point with integer coordinates.
+            </summary>
+        </member>
+        <member name="T:Graphics.LineDash">
+            <summary>
+                Represents a line dash.
+            </summary>
+        </member>
+        <member name="F:Graphics.LineDash.Color">
+            <summary>
+                Dash color.
+            </summary>
+            <remarks>Format is ARGB.</remarks>
+        </member>
+        <member name="F:Graphics.LineDash.Size">
+            <summary>
+                Dash size in pixels.
+            </summary>
+        </member>
+        <member name="M:Graphics.LineDash.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Create a new instance of <see cref="T:Graphics.LineDash"/>.
+            </summary>
+            <param name="size">Dash size.</param>
+            <param name="color">Dash color.</param>
+        </member>
+        <member name="T:Graphics.Renderer">
+            <summary>
+                Represents a renderer.
+            </summary>
+        </member>
+        <member name="M:Graphics.Renderer.GetContext">
+            <summary>
+                Gets the context of this renderer.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Graphics.Renderer.GetBitmap">
+            <summary>
+                Gets the bitmap (see remarks).
+            </summary>
+            <returns>A bitmap object, the type depends of the implementation of <see cref="T:Graphics.Renderer"/> you are using.</returns>
+            <remarks>
+                You should cast the object to the type representing a bitmap in your framework, e.g. WriteableBitmap in WPF.
+                <para>
+                    See remarks of the implementation you are using for which type you need to cast to.
+                </para>
+            </remarks>
+        </member>
+        <member name="M:Graphics.Renderer.GetBitmapSize(System.Int32@,System.Int32@)">
+            <summary>
+                Gets the bitmap size.
+            </summary>
+            <param name="bitmapWidth">Variable receiving the bitmap width.</param>
+            <param name="bitmapHeight">Variable recieving the bitmap height.</param>
+        </member>
+        <member name="M:Graphics.Renderer.SetBitmapSize(System.Int32,System.Int32)">
+            <summary>
+                Sets the bitmap size.
+            </summary>
+            <param name="bitmapWidth">Desired bitmap width.</param>
+            <param name="bitmapHeight">Desired bitmap height.</param>
+            <remarks>
+                Implementation should re-create the underlying object only when size differs from current one.
+            </remarks>
+        </member>
+        <member name="T:Graphics.RendererContext">
+            <summary>
+                Represents a <see cref="P:Graphics.RendererContext.Renderer"/> context.
+            </summary>
+            <remarks>
+                Note: a color is represented by an integer in ARGB format.
+            </remarks>
+        </member>
+        <member name="M:Graphics.RendererContext.#ctor(Graphics.Renderer)">
+            <summary>
+                Create a new instance of <see cref="T:Graphics.RendererContext"/>.
+            </summary>
+            <param name="renderer">The renderer this context is for.</param>
+        </member>
+        <member name="M:Graphics.RendererContext.Dispose">
+            <summary>
+                Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Graphics.RendererContext.Clear(System.Int32)">
+            <summary>
+                Clear bitmap with specified color.
+            </summary>
+            <param name="color">The color to use.</param>
+        </member>
+        <member name="M:Graphics.RendererContext.Clear">
+            <summary>
+                Clear bitmap with transparent color.
+            </summary>
+        </member>
+        <member name="M:Graphics.RendererContext.DrawLine(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Draws a line.
+            </summary>
+            <param name="x1">The X-coordinate of the first point.</param>
+            <param name="y1">The Y-coordinate of the first point.</param>
+            <param name="x2">The X-coordinate of the second point.</param>
+            <param name="y2">The Y-coordinate of the second point.</param>
+            <param name="color">The color to use.</param>
+        </member>
+        <member name="M:Graphics.RendererContext.DrawLine(System.Int32,System.Int32,System.Int32,System.Int32,Graphics.LineDash[])">
+            <summary>
+                Draws a dashed line.
+            </summary>
+            <param name="x1">The X-coordinate of the first point.</param>
+            <param name="y1">The Y-coordinate of the first point.</param>
+            <param name="x2">The X-coordinate of the second point.</param>
+            <param name="y2">The Y-coordinate of the second point.</param>
+            <param name="dashes">The array of line dashes to use.</param>
+        </member>
+        <member name="M:Graphics.RendererContext.FillRectangle(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+                Draws a filled rectangle.
+            </summary>
+            <param name="x1">The X-coordinate of the top/left point.</param>
+            <param name="y1">The Y-coordinate of the top/left point.</param>
+            <param name="x2">The X-coordinate of the bottom/right point.</param>
+            <param name="y2">The Y-coordinate of the bottom/right point.</param>
+            <param name="color">The color to use.</param>
+        </member>
+        <member name="P:Graphics.RendererContext.Renderer">
+            <summary>
+                Gets the renderer of this context.
+            </summary>
+        </member>
+    </members>
+</doc>

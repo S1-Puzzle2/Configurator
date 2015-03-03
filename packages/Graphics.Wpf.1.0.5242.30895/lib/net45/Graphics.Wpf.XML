@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Graphics.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:Graphics.Wpf.WpfRenderer">
+            <summary>
+                A WPF implementation of <see cref="T:Graphics.Renderer"/>.
+            </summary>
+            <remarks><see cref="M:Graphics.Wpf.WpfRenderer.GetBitmap"/> will return an object of type <see cref="T:System.Windows.Media.Imaging.WriteableBitmap"/>.</remarks>
+        </member>
+        <member name="M:Graphics.Wpf.WpfRenderer.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Graphics.Wpf.WpfRenderer"/>.
+            </summary>
+        </member>
+        <member name="M:Graphics.Wpf.WpfRenderer.GetBitmap">
+            <summary>
+                Gets the bitmap.
+            </summary>
+            <returns>A <see cref="T:System.Windows.Media.Imaging.WriteableBitmap"/> object.</returns>
+        </member>
+        <member name="M:Graphics.Wpf.WriteableBitmapExExtensions.Clear(System.Windows.Media.Imaging.WriteableBitmap,System.Int32)">
+            <summary>
+                Fills the whole WriteableBitmap with a color.
+            </summary>
+            <param name="bmp">The WriteableBitmap.</param>
+            <param name="color">The color used for filling.</param>
+        </member>
+        <member name="M:Graphics.Wpf.WriteableBitmapExExtensions.DrawLineBresenham(System.Windows.Media.Imaging.WriteableBitmap,System.Int32,System.Int32,System.Int32,System.Int32,Graphics.LineDash[])">
+            <summary>
+                Draws a dashed line by connecting two points using the Bresenham algorithm.
+            </summary>
+            <param name="bmp">The WriteableBitmap.</param>
+            <param name="x1">The x-coordinate of the start point.</param>
+            <param name="y1">The y-coordinate of the start point.</param>
+            <param name="x2">The x-coordinate of the end point.</param>
+            <param name="y2">The y-coordinate of the end point.</param>
+            <param name="lineDashes">The array of lineDashes to use as a pattern.</param>
+        </member>
+        <member name="M:Graphics.Wpf.WriteableBitmapExExtensions.DrawLineBresenham(System.Windows.Media.Imaging.WriteableBitmap,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Media.Imaging.BitmapContext)">
+            <summary>
+                Draws a colored line by connecting two points using the Bresenham algorithm.
+            </summary>
+            <param name="bmp">The WriteableBitmap.</param>
+            <param name="x1">The x-coordinate of the start point.</param>
+            <param name="y1">The y-coordinate of the start point.</param>
+            <param name="x2">The x-coordinate of the end point.</param>
+            <param name="y2">The y-coordinate of the end point.</param>
+            <param name="color">The color for the line.</param>
+            <param name="bitmapContext"></param>
+        </member>
+        <member name="T:Graphics.Wpf.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Graphics.Wpf.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Graphics.Wpf.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
